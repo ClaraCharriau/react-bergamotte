@@ -1,0 +1,14 @@
+.basketButton {
+    border-radius: 50px;
+    background: #799988;
+    color: white;
+    padding: 25px;
+    border: none;
+}
+
+.basketButton:hover {
+    cursor: pointer;
+    background-color: white;
+    color: #799988;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+}

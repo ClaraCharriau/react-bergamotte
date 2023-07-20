@@ -1,0 +1,14 @@
+.wrapper {
+    background-color: #AC6F5A;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.wrapper .link {
+    text-decoration: none;
+    color: white;
+}

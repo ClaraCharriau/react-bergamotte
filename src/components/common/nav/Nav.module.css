@@ -1,0 +1,10 @@
+.navItems {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.links {
+    text-decoration: none;
+    color: white;
+}

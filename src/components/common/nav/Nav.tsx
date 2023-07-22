@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import style from "./Nav.module.css";
+import { useCartContext } from "context/cart.context";
 
 const Nav = () => {
   const navLinks = [
@@ -25,6 +26,8 @@ const Nav = () => {
     },
   ];
 
+  const { getCartQuantity, getCartTotal } = useCartContext();
+
   return (
     <nav className={style.navList}>
       <ul className={style.navItems}>
@@ -35,6 +38,9 @@ const Nav = () => {
             </NavLink>
           </li>
         ))}
+        <li>
+          Panier {getCartQuantity()} - {getCartTotal()}€
+        </li>
       </ul>
     </nav>
   );

@@ -1,21 +1,27 @@
+import { useCartContext } from "context/cart.context";
 import style from "./Button.module.css";
+import { IProduct } from "mocks/product";
 
 interface buttonProps {
-  productName?: string;
+  product: IProduct;
+  quantity: number;
   buttonText: string;
 }
 
-const Button = (props : buttonProps) => {
-  const {productName = "", buttonText} = props
+const Button = (props: buttonProps) => {
+  const { product, quantity, buttonText } = props;
 
-  const addToCart = (value: string) => {
-    console.log(`${value} ajouté au panier !`);
+  const { addProductToCart } = useCartContext();
+
+  const addToCart = (product: IProduct, quantity: number) => {
+    console.log(`${product.productName} ajouté au panier !`);
+    addProductToCart(product, quantity);
   };
 
   return (
     <button
       className={style.basketButton}
-      onClick={() => addToCart(productName)}
+      onClick={() => addToCart(product, quantity)}
     >
       {buttonText.toUpperCase()}
     </button>

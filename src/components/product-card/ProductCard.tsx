@@ -10,19 +10,22 @@ interface ProductCardProps {
 const ProductCard = (props: ProductCardProps) => {
   const { item } = props;
   const { id, productName, price, description: desc } = item;
+
   return (
-    
     <article>
       <Link to={`/products/${id}`} className={style.link}>
-      <img className={style.image} src={props.item.image.url} alt={item.image.alt}/>
-      <h2>
-        {productName} - {price}€
-      </h2>
-      <p>{desc}</p>
+        <img
+          className={style.image}
+          src={props.item.image.url}
+          alt={item.image.alt}
+        />
+        <h2>
+          {productName} - {price}€
+        </h2>
+        <p>{desc}</p>
       </Link>
-      <Button productName={productName} buttonText="Ajouter au panier" />
+      <Button product={item} quantity={1} buttonText="Ajouter au panier" />
     </article>
-    
   );
 };
 
